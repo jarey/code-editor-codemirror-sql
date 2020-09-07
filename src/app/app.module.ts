@@ -20,6 +20,7 @@ import {
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { errorHandlerConfig } from 'src/environments/error-handler.config';
+import {NgxTypedJsModule} from 'ngx-typed-js';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { errorHandlerConfig } from 'src/environments/error-handler.config';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    NgxTypedJsModule,
     IgvcompCommonLibModule.forRoot(
       environment.authorization.oauth.interceptor,
       environment.xdomain as XDomainStorageConfig

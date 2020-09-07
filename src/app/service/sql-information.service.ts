@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { HttpClient } from '@angular/common/http';
-import { MappedData } from '../api/mapped-data';
+import { MappedData, ResultData } from '../api/mapped-data';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -18,5 +18,9 @@ export class SqlInformationService {
    */
   public getSqlObjectsInformation(url: string): Observable<MappedData> {
     return this.http.get<MappedData>(url + 'public/sqlUtils');
+  }
+
+  public postInformation(url: string, data: object): Observable<Array<ResultData>> {
+    return this.http.post<Array<ResultData>>(url + 'public/sqlUtils', data);
   }
 }

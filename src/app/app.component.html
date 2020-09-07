@@ -31,6 +31,7 @@
       </select>
     </div>
 
+    <label for="entityManager">Entity Manager:</label>
     <div class="select">
       <select name="entityManager" formControlName="entityManager">
         <option *ngFor="let item of entityManagers" value="{{item}}">{{item}}</option>
@@ -78,34 +79,17 @@
       $&nbsp;<span class="prompt"></span>
       <span class="typed-cursor"></span>
 
+
+      <ngx-typed-js  *ngIf="textoResultado" [strings]="textoResultado" contentType='html'>
+        <h2 class="typing"></h2>
+      </ngx-typed-js>
+
     </section>
   </div>
-  <!-- data -->
-  <div class="terminal-data mimik-run-output">
-    <br>Found 1 feature<br>
-    ----------------------------------------------<br>
-    Feature: Bottles <span class="gray"># ./features/bottles.feature</span><br><br>
 
-    &nbsp;&nbsp;Scenario: A bottle falls from the wall<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;<span class="green">✓</span> <span class="gray">Given 100 green bottles are
-      standing</span><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;<span class="green">✓</span> <span class="gray">when 1 green bottle accidentally
-      falls</span><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;<span class="green">✓</span> <span class="gray">then there are 99 green bottles
-      standing</span><br>
-    <br>
-    <span class="gray">&nbsp;---------- ----------- ------- -------- --------</span><br>
-    &nbsp;&nbsp;Features&nbsp;&nbsp;&nbsp;Scenarios&nbsp;&nbsp;&nbsp;Steps&nbsp;&nbsp;&nbsp;Passed&nbsp;&nbsp;&nbsp;Failed<br>
-    <span class="gray">&nbsp;---------- ----------- ------- -------- --------</span><br>
-    &nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-      class="green">✓ 4</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0 <br>
-    <br>
-    &nbsp;&nbsp;Completed 1 feature in 0.01s<br>
-    <br>
-  </div>
 
   <!-- Highlight Card -->
-  <div class="card highlight-card card-small">
+  <div class="card highlight-card card-small" (click)="sendSqlToServer()">
     <span>Ejecutar SQL</span>
   </div>
 
