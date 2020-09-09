@@ -17,10 +17,10 @@ export class SqlInformationService {
    * que se indique en la url argumento.
    */
   public getSqlObjectsInformation(url: string): Observable<MappedData> {
-    return this.http.get<MappedData>(url + 'public/sqlUtils');
+    return this.http.get<MappedData>(url + 'private/sqlUtils');
   }
 
   public postInformation(url: string, data: object): Observable<Array<ResultData>> {
-    return this.http.post<Array<ResultData>>(url + 'public/sqlUtils', data);
+    return this.http.post<Array<ResultData>>(url + 'private/sqlUtils', data);
   }
 }

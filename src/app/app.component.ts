@@ -182,7 +182,7 @@ export class AppComponent implements AfterViewInit, OnInit {
 
 
   private createResultFromJson(data: Array<ResultData>): void {
-    this.textoResultado = [''];
+    this.textoResultado = ['$'];
     data.forEach(
     elemento => {
       const table = document.createElement('table');
@@ -208,10 +208,11 @@ export class AppComponent implements AfterViewInit, OnInit {
           );
         }
       );
-      this.textoResultado[0] = '<span class="prompt"></span>' + '&nbsp;' + elemento.statement + '\n\n';
+      this.textoResultado[0] += '<span class="prompt"></span>' + '&nbsp;' + elemento.statement + '\n\n';
       this.textoResultado[0] += table.outerHTML;
-      this.textoResultado[0] += '\n';
+      this.textoResultado[0] += '\n\n\n$';
     });
+    alert(this.textoResultado[0]);
   }
 }
 

@@ -2,7 +2,7 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
-const REST_BASE_URL = 'https://igvpir.dev.xunta.local/rest';
+const REST_BASE_URL = 'http://localhost:8080/plavis_igvxespat-rest';
 
 export const environment = {
   production: false,
